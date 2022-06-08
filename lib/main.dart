@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_tutorial/config/theme.dart';
 import 'package:provider_tutorial/providers/provider1.dart';
 import 'package:provider_tutorial/views/home.dart';
 
@@ -16,8 +17,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: context.watch<AProvider>().currentTheme,
+      theme: AppTheme.lightTheme(),
+      darkTheme: AppTheme.darkTheme(),
+      themeMode: context.watch<AProvider>().currentTheme,
       home: const HomeView(),
     );
   }

@@ -5,7 +5,7 @@ class AProvider extends ChangeNotifier {
   String _pUsername = "";
   bool isDark = false;
   bool isSecure = false;
-  ThemeData currentTheme = ThemeData.light();
+  ThemeMode currentTheme = ThemeMode.light;
 
   String get uname => _pUsername;
 
@@ -15,7 +15,7 @@ class AProvider extends ChangeNotifier {
   }
 
   void changeTheme(bool select) {
-    currentTheme = select ? ThemeData.dark() : ThemeData.light();
+    currentTheme = select ? ThemeMode.dark : ThemeMode.light;
     isDark = !isDark;
     notifyListeners();
   }
